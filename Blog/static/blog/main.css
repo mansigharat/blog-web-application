@@ -1,0 +1,328 @@
+/* Add this to <head> BEFORE your stylesheet:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+*/
+
+:root {
+    /* Mid-tone, calm palette: deep teal (main) + one warm amber accent */
+    --background: #F1F4F2;      /* soft grey-green page */
+    --surface: #FBFCFB;         /* near-white, easier on the eyes */
+    --dark: #1F2F32;            /* headings: dark teal-ink, not pure black */
+    --text: #3B4A4D;            /* body text */
+    --muted: #5F6E72;           /* meta text, still readable */
+    --border: #DDE4E1;
+    --primary: #2E6B6F;         /* teal: buttons, links */
+    --primary-dark: #22514F;
+    --accent: #B4672C;          /* amber: used sparingly (hover, details) */
+    --tint: #E3EDEA;            /* soft teal tint for sidebar */
+
+    --font-display: 'Newsreader', Georgia, serif;
+    --font-ui: 'DM Sans', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    font-family: var(--font-ui);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Headings use the serif: this is where the blog gets its personality */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--dark);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+a:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background-color: var(--surface) !important;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: none;
+}
+
+.navbar-brand {
+    font-family: var(--font-display);
+    color: var(--dark) !important;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.navbar-brand i { color: var(--accent); }
+
+.navbar-nav .nav-link {
+    color: var(--text) !important;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover { color: var(--primary) !important; }
+
+.navbar-toggler { border-color: var(--border); }
+.navbar-toggler:focus { box-shadow: none; }
+
+.navbar .btn {
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar .btn-outline-light {
+    color: var(--primary);
+    border-color: var(--border);
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: var(--tint);
+    color: var(--primary-dark);
+}
+
+.navbar .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.navbar .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* ---------- Layout ---------- */
+.main-content {
+    min-height: 80vh;
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+
+.section-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--dark);
+    border-bottom: 2px solid var(--primary);   /* one confident line instead of a faint one */
+    padding-bottom: 14px;
+    margin-bottom: 8px;
+}
+
+/* ---------- Posts: an editorial list, not a stack of identical boxes ---------- */
+.blog-card {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 12px 0 8px;
+}
+
+.blog-card:hover { transform: none; box-shadow: none; }
+
+.blog-card .card-body { padding: 24px 0; }
+
+.blog-card .card-title {
+    font-family: var(--font-display);
+    color: var(--dark);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+}
+
+.blog-card:hover .card-title { color: var(--primary); }
+
+/* The newest post gets a little extra weight */
+.blog-card:first-of-type .card-title { font-size: 38px; font-weight: 700; }
+
+.blog-card .card-text {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 65ch;               /* comfortable reading line length */
+}
+
+.post-meta {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.post-meta i { color: var(--accent); }
+
+/* "Read More" becomes a quiet text link instead of a boxed button */
+.blog-card .btn-outline-primary {
+    border: none;
+    background: none;
+    padding: 0;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1.5px;
+}
+
+.blog-card .btn-outline-primary:hover {
+    background: none;
+    color: var(--accent);
+}
+
+/* ---------- Sidebar: tinted panel, no coloured header bar ---------- */
+.sidebar-card {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--tint);
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.sidebar-card .card-header {
+    background: transparent;
+    border: none;
+    padding: 22px 24px 0;
+}
+
+.sidebar-card .card-header h5 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.sidebar-card .card-body { padding: 14px 24px 24px; }
+
+.sidebar-card p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.sidebar-card .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 9px 0;
+    color: var(--text);
+    font-size: 15px;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.sidebar-card .list-group-item:hover {
+    color: var(--accent);
+    padding-left: 6px;
+}
+
+/* ---------- About page ---------- */
+.about-container { max-width: 760px; margin: 20px auto; }
+
+.about-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: none;
+}
+
+.about-icon { font-size: 52px; color: var(--primary); }
+
+.about-description {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.about-card h5 {
+    color: var(--dark);
+    font-size: 22px;
+    margin-top: 28px;
+}
+
+/* ---------- Buttons & alerts ---------- */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.alert {
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+
+.alert-info {
+    background-color: var(--tint);
+    color: var(--primary-dark);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--surface);
+    color: var(--text);
+    padding: 32px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+footer h5 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--dark);
+}
+
+footer h5 i { color: var(--accent); }
+
+footer p { color: var(--muted); font-size: 14px; }
+footer small { color: var(--muted) !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+    .navbar-nav { padding-top: 15px; }
+    .navbar-nav .nav-link { margin: 5px 0; }
+    .navbar .d-flex { margin-top: 15px; padding-bottom: 10px; }
+    .sidebar-card { margin-top: 32px; }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand { font-size: 21px; }
+    .main-content { padding-top: 28px; padding-bottom: 28px; }
+    .section-title { font-size: 28px; }
+    .blog-card .card-title,
+    .blog-card:first-of-type .card-title { font-size: 26px; }
+    .blog-card .card-text { font-size: 16px; }
+    .about-card { padding: 20px; }
+    footer { padding: 25px 0; }
+}
