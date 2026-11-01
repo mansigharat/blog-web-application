@@ -31,6 +31,9 @@ def home(request):
 def about(request):
     return render(request, 'Blog/about.html', {'title': 'About'})
 
+def landing(request):
+    return render(request, 'Blog/landing_page.html', {'posts': posts, 'title': 'Welcome'})
+
 def post_detail(request, post_id):
     for post in posts:
         if post['id'] == post_id:
