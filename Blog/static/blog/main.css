@@ -1,21 +1,15 @@
-/* Add this to <head> BEFORE your stylesheet:
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-*/
 
 :root {
-    /* Mid-tone, calm palette: deep teal (main) + one warm amber accent */
-    --background: #F1F4F2;      /* soft grey-green page */
-    --surface: #FBFCFB;         /* near-white, easier on the eyes */
-    --dark: #1F2F32;            /* headings: dark teal-ink, not pure black */
-    --text: #3B4A4D;            /* body text */
-    --muted: #5F6E72;           /* meta text, still readable */
+    --background: #F1F4F2;      
+    --surface: #FBFCFB;         
+    --dark: #1F2F32;            
+    --text: #3B4A4D;            
+    --muted: #5F6E72;           
     --border: #DDE4E1;
-    --primary: #2E6B6F;         /* teal: buttons, links */
+    --primary: #2E6B6F;         
     --primary-dark: #22514F;
-    --accent: #B4672C;          /* amber: used sparingly (hover, details) */
-    --tint: #E3EDEA;            /* soft teal tint for sidebar */
+    --accent: #B4672C;          
+    --tint: #E3EDEA;            
 
     --font-display: 'Newsreader', Georgia, serif;
     --font-ui: 'DM Sans', system-ui, sans-serif;
@@ -29,7 +23,6 @@ body {
     line-height: 1.6;
 }
 
-/* Headings use the serif: this is where the blog gets its personality */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--dark);
@@ -42,7 +35,6 @@ a:focus-visible, .btn:focus-visible {
     outline-offset: 2px;
 }
 
-/* ---------- Navbar ---------- */
 .navbar {
     background-color: var(--surface) !important;
     padding: 14px 0;
@@ -101,7 +93,6 @@ a:focus-visible, .btn:focus-visible {
     border-color: var(--primary-dark);
 }
 
-/* ---------- Layout ---------- */
 .main-content {
     min-height: 80vh;
     padding-top: 56px;
@@ -112,12 +103,11 @@ a:focus-visible, .btn:focus-visible {
     font-size: 34px;
     font-weight: 700;
     color: var(--dark);
-    border-bottom: 2px solid var(--primary);   /* one confident line instead of a faint one */
+    border-bottom: 2px solid var(--primary);   
     padding-bottom: 14px;
     margin-bottom: 8px;
 }
 
-/* ---------- Posts: an editorial list, not a stack of identical boxes ---------- */
 .blog-card {
     background: transparent;
     border: none;
@@ -143,14 +133,13 @@ a:focus-visible, .btn:focus-visible {
 
 .blog-card:hover .card-title { color: var(--primary); }
 
-/* The newest post gets a little extra weight */
 .blog-card:first-of-type .card-title { font-size: 38px; font-weight: 700; }
 
 .blog-card .card-text {
     color: var(--text);
     font-size: 17px;
     line-height: 1.75;
-    max-width: 65ch;               /* comfortable reading line length */
+    max-width: 65ch;               
 }
 
 .post-meta {
@@ -161,7 +150,6 @@ a:focus-visible, .btn:focus-visible {
 
 .post-meta i { color: var(--accent); }
 
-/* "Read More" becomes a quiet text link instead of a boxed button */
 .blog-card .btn-outline-primary {
     border: none;
     background: none;
@@ -179,7 +167,6 @@ a:focus-visible, .btn:focus-visible {
     color: var(--accent);
 }
 
-/* ---------- Sidebar: tinted panel, no coloured header bar ---------- */
 .sidebar-card {
     border: none;
     border-radius: 10px;
@@ -223,7 +210,6 @@ a:focus-visible, .btn:focus-visible {
     padding-left: 6px;
 }
 
-/* ---------- About page ---------- */
 .about-container { max-width: 760px; margin: 20px auto; }
 
 .about-card {
@@ -249,7 +235,6 @@ a:focus-visible, .btn:focus-visible {
     margin-top: 28px;
 }
 
-/* ---------- Buttons & alerts ---------- */
 .btn {
     border-radius: 6px;
     font-weight: 500;
@@ -288,7 +273,6 @@ a:focus-visible, .btn:focus-visible {
     color: var(--primary-dark);
 }
 
-/* ---------- Footer ---------- */
 footer {
     background-color: var(--surface);
     color: var(--text);
@@ -308,7 +292,6 @@ footer h5 i { color: var(--accent); }
 footer p { color: var(--muted); font-size: 14px; }
 footer small { color: var(--muted) !important; }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 991px) {
     .navbar-nav { padding-top: 15px; }
     .navbar-nav .nav-link { margin: 5px 0; }

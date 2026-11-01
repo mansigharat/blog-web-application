@@ -1,11 +1,4 @@
-/* ==========================================================================
-   Django Blog - Landing Page Stylesheet
-   Designed to seamlessly complement main.css editorial aesthetic
-   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   Custom Landing Variables & Enhancements
-   -------------------------------------------------------------------------- */
 :root {
     --hero-glow: rgba(46, 107, 111, 0.08);
     --hero-glow-accent: rgba(180, 103, 44, 0.06);
@@ -26,9 +19,6 @@ body.landing-body {
     line-height: 1.65;
 }
 
-/* --------------------------------------------------------------------------
-   Sticky Glass Navigation Bar
-   -------------------------------------------------------------------------- */
 .landing-navbar {
     background-color: rgba(251, 252, 251, 0.88) !important;
     backdrop-filter: blur(14px);
@@ -125,9 +115,6 @@ body.landing-body {
     box-shadow: 0 4px 12px rgba(46, 107, 111, 0.3);
 }
 
-/* --------------------------------------------------------------------------
-   Hero Section
-   -------------------------------------------------------------------------- */
 .landing-hero {
     position: relative;
     padding: 90px 0 80px;
@@ -298,9 +285,6 @@ body.landing-body {
     margin-right: 4px;
 }
 
-/* --------------------------------------------------------------------------
-   Hero Featured Preview Card
-   -------------------------------------------------------------------------- */
 .hero-card-wrapper {
     position: relative;
 }
@@ -438,7 +422,6 @@ body.landing-body {
     background-color: #fff9f4;
 }
 
-/* Floating interactive stat chip */
 .floating-stat-chip {
     position: absolute;
     bottom: -18px;
@@ -479,9 +462,6 @@ body.landing-body {
     letter-spacing: 0.05em;
 }
 
-/* --------------------------------------------------------------------------
-   Stats Strip
-   -------------------------------------------------------------------------- */
 .landing-stats-section {
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -513,9 +493,6 @@ body.landing-body {
     margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   Section Common Headers
-   -------------------------------------------------------------------------- */
 .landing-section {
     padding: 85px 0;
 }
@@ -545,9 +522,6 @@ body.landing-body {
     max-width: 620px;
 }
 
-/* --------------------------------------------------------------------------
-   Topics & Categories Grid
-   -------------------------------------------------------------------------- */
 .topic-card {
     background-color: var(--surface);
     border: 1px solid var(--border);
@@ -620,9 +594,6 @@ body.landing-body {
     transform: translateX(4px);
 }
 
-/* --------------------------------------------------------------------------
-   Featured / Trending Stories Section
-   -------------------------------------------------------------------------- */
 .story-card-editorial {
     background-color: var(--surface);
     border: 1px solid var(--border);
@@ -721,9 +692,6 @@ body.landing-body {
     color: var(--accent);
 }
 
-/* --------------------------------------------------------------------------
-   Platform Features Section
-   -------------------------------------------------------------------------- */
 .features-section {
     background-color: var(--surface);
     border-top: 1px solid var(--border);
@@ -779,9 +747,6 @@ body.landing-body {
     margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   Interactive Reading Experience Showcase
-   -------------------------------------------------------------------------- */
 .experience-preview-panel {
     background-color: var(--surface);
     border: 1px solid var(--border);
@@ -866,9 +831,6 @@ body.landing-body {
     color: #839799;
 }
 
-/* --------------------------------------------------------------------------
-   Testimonials
-   -------------------------------------------------------------------------- */
 .testimonial-card {
     background-color: var(--surface);
     border: 1px solid var(--border);
@@ -921,9 +883,6 @@ body.landing-body {
     color: var(--muted);
 }
 
-/* --------------------------------------------------------------------------
-   Newsletter / CTA Banner
-   -------------------------------------------------------------------------- */
 .landing-cta-section {
     padding: 70px 0 90px;
 }
@@ -1016,9 +975,6 @@ body.landing-body {
     gap: 6px;
 }
 
-/* --------------------------------------------------------------------------
-   Footer
-   -------------------------------------------------------------------------- */
 .landing-footer {
     background-color: var(--surface);
     border-top: 1px solid var(--border);
@@ -1133,9 +1089,6 @@ body.landing-body {
     box-shadow: 0 0 0 2px rgba(46, 159, 101, 0.2);
 }
 
-/* --------------------------------------------------------------------------
-   Responsive Design
-   -------------------------------------------------------------------------- */
 @media (max-width: 991px) {
     .hero-title {
         font-size: 44px;

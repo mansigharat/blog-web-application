@@ -1,40 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Blog | Where Ideas & Thoughtful Writing Flourish</title>
-    <meta name="description" content="A modern, distraction-free publishing platform for developers, thinkers, and builders. Read insightful articles on technology, programming, and architecture.">
+    <meta name="description"
+        content="A modern, distraction-free publishing platform for developers, thinkers, and builders. Read insightful articles on technology, programming, and architecture.">
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <!-- Google Fonts: Newsreader (Display Serif) & DM Sans (UI Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- Core Brand CSS & Landing Page Styles -->
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
     <link rel="stylesheet" href="{% static 'blog/landing_page.css' %}">
 </head>
 
 <body class="landing-body">
 
-    <!-- ======================================================================
-         Sticky Glass Navigation
-         ====================================================================== -->
     <nav class="navbar navbar-expand-lg landing-navbar">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <i class="bi bi-journal-text"></i> Django Blog
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#landingNavbarNav" aria-controls="landingNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#landingNavbarNav"
+                aria-controls="landingNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -65,13 +63,9 @@
         </div>
     </nav>
 
-    <!-- ======================================================================
-         Hero Section
-         ====================================================================== -->
     <header class="landing-hero">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Left: Hero Headline & Action -->
                 <div class="col-lg-7">
                     <div class="hero-pill-badge">
                         <i class="bi bi-stars badge-icon"></i>
@@ -83,7 +77,8 @@
                     </h1>
 
                     <p class="hero-subtitle">
-                        Immerse yourself in deep-dive essays on software engineering, system architecture, and modern craft. Built for curious developers, creative thinkers, and relentless builders.
+                        Immerse yourself in deep-dive essays on software engineering, system architecture, and modern
+                        craft. Built for curious developers, creative thinkers, and relentless builders.
                     </p>
 
                     <div class="hero-cta-group">
@@ -97,7 +92,6 @@
                         </a>
                     </div>
 
-                    <!-- Social Proof / Community Signal -->
                     <div class="hero-social-proof">
                         <div class="avatar-stack">
                             <span class="avatar-initials">CG</span>
@@ -119,7 +113,6 @@
                     </div>
                 </div>
 
-                <!-- Right: Editorial Featured Preview Card -->
                 <div class="col-lg-5">
                     <div class="hero-card-wrapper">
                         <article class="hero-preview-card">
@@ -133,7 +126,8 @@
                             </h2>
 
                             <p class="hero-card-excerpt">
-                                An in-depth exploration of database query profiling, caching strategies with Redis, and building maintainable domain logic without bloat.
+                                An in-depth exploration of database query profiling, caching strategies with Redis, and
+                                building maintainable domain logic without bloat.
                             </p>
 
                             <div class="hero-card-author">
@@ -145,17 +139,18 @@
                                     </div>
                                 </div>
                                 <div class="card-actions">
-                                    <button type="button" class="icon-action-btn" title="Bookmark story" aria-label="Bookmark">
+                                    <button type="button" class="icon-action-btn" title="Bookmark story"
+                                        aria-label="Bookmark">
                                         <i class="bi bi-bookmark"></i>
                                     </button>
-                                    <button type="button" class="icon-action-btn" title="Share story" aria-label="Share">
+                                    <button type="button" class="icon-action-btn" title="Share story"
+                                        aria-label="Share">
                                         <i class="bi bi-share"></i>
                                     </button>
                                 </div>
                             </div>
                         </article>
 
-                        <!-- Floating Micro Stat Badge -->
                         <div class="floating-stat-chip">
                             <div class="chip-icon">
                                 <i class="bi bi-lightning-charge-fill"></i>
@@ -171,9 +166,6 @@
         </div>
     </header>
 
-    <!-- ======================================================================
-         Stats & Credibility Bar
-         ====================================================================== -->
     <section class="landing-stats-section">
         <div class="container">
             <div class="row g-4 justify-content-center">
@@ -205,16 +197,14 @@
         </div>
     </section>
 
-    <!-- ======================================================================
-         Curated Topics Section
-         ====================================================================== -->
     <section id="topics" class="landing-section">
         <div class="container">
             <div class="row align-items-end mb-5">
                 <div class="col-md-8">
                     <div class="section-eyebrow">Explore Domains</div>
                     <h2 class="section-heading">Curated Topics for Curious Minds</h2>
-                    <p class="section-desc mb-0">Discover high-signal writing across disciplines. No clickbait, just rigorous thinking and practical craft.</p>
+                    <p class="section-desc mb-0">Discover high-signal writing across disciplines. No clickbait, just
+                        rigorous thinking and practical craft.</p>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
                     <a href="/" class="btn btn-outline-primary btn-sm">
@@ -224,7 +214,6 @@
             </div>
 
             <div class="row g-4">
-                <!-- Topic Card 1 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/" class="topic-card">
                         <div>
@@ -232,7 +221,8 @@
                                 <i class="bi bi-cpu"></i>
                             </div>
                             <h3 class="topic-title">System Architecture</h3>
-                            <p class="topic-summary">High-scale backends, database sharding, asynchronous queues, and clean design patterns.</p>
+                            <p class="topic-summary">High-scale backends, database sharding, asynchronous queues, and
+                                clean design patterns.</p>
                         </div>
                         <div class="topic-meta">
                             <span>48 Articles</span>
@@ -241,7 +231,6 @@
                     </a>
                 </div>
 
-                <!-- Topic Card 2 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/" class="topic-card">
                         <div>
@@ -249,7 +238,8 @@
                                 <i class="bi bi-filetype-py"></i>
                             </div>
                             <h3 class="topic-title">Python & Django</h3>
-                            <p class="topic-summary">Mastering Django ORM optimizations, REST APIs, class-based views, and real-world deployment.</p>
+                            <p class="topic-summary">Mastering Django ORM optimizations, REST APIs, class-based views,
+                                and real-world deployment.</p>
                         </div>
                         <div class="topic-meta">
                             <span>76 Articles</span>
@@ -258,7 +248,6 @@
                     </a>
                 </div>
 
-                <!-- Topic Card 3 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/" class="topic-card">
                         <div>
@@ -266,7 +255,8 @@
                                 <i class="bi bi-palette"></i>
                             </div>
                             <h3 class="topic-title">Frontend & UI/UX</h3>
-                            <p class="topic-summary">Modern CSS layouts, typography craftsmanship, micro-interactions, and accessible web systems.</p>
+                            <p class="topic-summary">Modern CSS layouts, typography craftsmanship, micro-interactions,
+                                and accessible web systems.</p>
                         </div>
                         <div class="topic-meta">
                             <span>35 Articles</span>
@@ -275,7 +265,6 @@
                     </a>
                 </div>
 
-                <!-- Topic Card 4 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/" class="topic-card">
                         <div>
@@ -283,7 +272,8 @@
                                 <i class="bi bi-robot"></i>
                             </div>
                             <h3 class="topic-title">AI & Data Engineering</h3>
-                            <p class="topic-summary">LLM orchestration, vector databases, practical data pipelines, and machine learning architectures.</p>
+                            <p class="topic-summary">LLM orchestration, vector databases, practical data pipelines, and
+                                machine learning architectures.</p>
                         </div>
                         <div class="topic-meta">
                             <span>29 Articles</span>
@@ -292,7 +282,6 @@
                     </a>
                 </div>
 
-                <!-- Topic Card 5 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/" class="topic-card">
                         <div>
@@ -300,7 +289,8 @@
                                 <i class="bi bi-shield-check"></i>
                             </div>
                             <h3 class="topic-title">DevOps & Security</h3>
-                            <p class="topic-summary">Zero-downtime releases, CI/CD pipelines, Docker containerization, and bulletproof web security.</p>
+                            <p class="topic-summary">Zero-downtime releases, CI/CD pipelines, Docker containerization,
+                                and bulletproof web security.</p>
                         </div>
                         <div class="topic-meta">
                             <span>22 Articles</span>
@@ -309,7 +299,6 @@
                     </a>
                 </div>
 
-                <!-- Topic Card 6 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/" class="topic-card">
                         <div>
@@ -317,7 +306,8 @@
                                 <i class="bi bi-compass"></i>
                             </div>
                             <h3 class="topic-title">Engineering Career</h3>
-                            <p class="topic-summary">Lessons on leadership, technical writing, effective code reviews, and remote software engineering.</p>
+                            <p class="topic-summary">Lessons on leadership, technical writing, effective code reviews,
+                                and remote software engineering.</p>
                         </div>
                         <div class="topic-meta">
                             <span>41 Articles</span>
@@ -329,16 +319,14 @@
         </div>
     </section>
 
-    <!-- ======================================================================
-         Featured & Trending Stories
-         ====================================================================== -->
     <section id="trending" class="landing-section pt-0">
         <div class="container">
             <div class="row align-items-end mb-5">
                 <div class="col-md-8">
                     <div class="section-eyebrow">Editorial Highlights</div>
                     <h2 class="section-heading">Trending Stories of the Week</h2>
-                    <p class="section-desc mb-0">Hand-picked essays sparking conversation across our community of engineers and writers.</p>
+                    <p class="section-desc mb-0">Hand-picked essays sparking conversation across our community of
+                        engineers and writers.</p>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
                     <a href="/" class="btn btn-primary">
@@ -349,158 +337,159 @@
 
             <div class="row g-4">
                 {% if posts %}
-                    <!-- Dynamically Rendered Posts from Django Context -->
-                    {% for post in posts|slice:":3" %}
-                    <div class="col-lg-4 col-md-6">
-                        <article class="story-card-editorial">
-                            <div>
-                                <div class="story-header">
-                                    <span class="story-tag">Article #{{ forloop.counter }}</span>
-                                    <span class="story-date">{{ post.date_posted }}</span>
-                                </div>
-                                <h3 class="story-title">{{ post.title }}</h3>
-                                <p class="story-excerpt">{{ post.content|truncatewords:24 }}</p>
+                {% for post in posts|slice:":3" %}
+                <div class="col-lg-4 col-md-6">
+                    <article class="story-card-editorial">
+                        <div>
+                            <div class="story-header">
+                                <span class="story-tag">Article #{{ forloop.counter }}</span>
+                                <span class="story-date">{{ post.date_posted }}</span>
                             </div>
-                            <div class="story-footer">
-                                <div class="story-author-small">
-                                    <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">{{ post.author|slice:":2"|upper }}</div>
-                                    <span class="story-author-name">{{ post.author }}</span>
+                            <h3 class="story-title">{{ post.title }}</h3>
+                            <p class="story-excerpt">{{ post.content|truncatewords:24 }}</p>
+                        </div>
+                        <div class="story-footer">
+                            <div class="story-author-small">
+                                <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">
+                                    {{ post.author.username|first|upper }}
                                 </div>
-                                <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                                <span class="story-author-name">{{ post.author }}</span>
                             </div>
-                        </article>
-                    </div>
-                    {% endfor %}
+                            <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
                 {% else %}
-                    <!-- High-Fidelity Editorial Preview Fallbacks -->
-                    <div class="col-lg-4 col-md-6">
-                        <article class="story-card-editorial">
-                            <div>
-                                <div class="story-header">
-                                    <span class="story-tag">Engineering</span>
-                                    <span class="story-date">Oct 31, 2026</span>
-                                </div>
-                                <h3 class="story-title">Demystifying Django's QuerySet Caching & Evaluation Mechanics</h3>
-                                <p class="story-excerpt">How lazy querysets work under the hood, avoiding notorious N+1 query bottlenecks, and using select_related like a pro.</p>
+                <div class="col-lg-4 col-md-6">
+                    <article class="story-card-editorial">
+                        <div>
+                            <div class="story-header">
+                                <span class="story-tag">Engineering</span>
+                                <span class="story-date">Oct 31, 2026</span>
                             </div>
-                            <div class="story-footer">
-                                <div class="story-author-small">
-                                    <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">CM</div>
-                                    <span class="story-author-name">CoreyMS</span>
-                                </div>
-                                <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="story-title">Demystifying Django's QuerySet Caching & Evaluation Mechanics</h3>
+                            <p class="story-excerpt">How lazy querysets work under the hood, avoiding notorious N+1
+                                query bottlenecks, and using select_related like a pro.</p>
+                        </div>
+                        <div class="story-footer">
+                            <div class="story-author-small">
+                                <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">
+                                    CM</div>
+                                <span class="story-author-name">CoreyMS</span>
                             </div>
-                        </article>
-                    </div>
+                            <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <article class="story-card-editorial">
-                            <div>
-                                <div class="story-header">
-                                    <span class="story-tag">Web Design</span>
-                                    <span class="story-date">Oct 30, 2026</span>
-                                </div>
-                                <h3 class="story-title">Crafting Warm Editorial Web Typography with Modern CSS</h3>
-                                <p class="story-excerpt">Why serif headings paired with clean sans-serif UI create effortless long-form reading, rhythm, and timeless appeal.</p>
+                <div class="col-lg-4 col-md-6">
+                    <article class="story-card-editorial">
+                        <div>
+                            <div class="story-header">
+                                <span class="story-tag">Web Design</span>
+                                <span class="story-date">Oct 30, 2026</span>
                             </div>
-                            <div class="story-footer">
-                                <div class="story-author-small">
-                                    <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">MG</div>
-                                    <span class="story-author-name">Mansi Gharat</span>
-                                </div>
-                                <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="story-title">Crafting Warm Editorial Web Typography with Modern CSS</h3>
+                            <p class="story-excerpt">Why serif headings paired with clean sans-serif UI create
+                                effortless long-form reading, rhythm, and timeless appeal.</p>
+                        </div>
+                        <div class="story-footer">
+                            <div class="story-author-small">
+                                <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">
+                                    MG</div>
+                                <span class="story-author-name">Mansi Gharat</span>
                             </div>
-                        </article>
-                    </div>
+                            <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <article class="story-card-editorial">
-                            <div>
-                                <div class="story-header">
-                                    <span class="story-tag">Production</span>
-                                    <span class="story-date">Oct 29, 2026</span>
-                                </div>
-                                <h3 class="story-title">From Zero to Production: Hardening Django Deployments</h3>
-                                <p class="story-excerpt">A checklist covering security headers, SSL, environment configurations, automated backups, and log monitoring.</p>
+                <div class="col-lg-4 col-md-6">
+                    <article class="story-card-editorial">
+                        <div>
+                            <div class="story-header">
+                                <span class="story-tag">Production</span>
+                                <span class="story-date">Oct 29, 2026</span>
                             </div>
-                            <div class="story-footer">
-                                <div class="story-author-small">
-                                    <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">JD</div>
-                                    <span class="story-author-name">John Deo</span>
-                                </div>
-                                <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                            <h3 class="story-title">From Zero to Production: Hardening Django Deployments</h3>
+                            <p class="story-excerpt">A checklist covering security headers, SSL, environment
+                                configurations, automated backups, and log monitoring.</p>
+                        </div>
+                        <div class="story-footer">
+                            <div class="story-author-small">
+                                <div class="author-avatar-fallback" style="width: 32px; height: 32px; font-size: 12px;">
+                                    {{ post.author.username|first|upper }}</div>
+                                <span class="story-author-name">John Deo</span>
                             </div>
-                        </article>
-                    </div>
+                            <a href="/" class="story-read-link">Read Story <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
                 {% endif %}
             </div>
         </div>
     </section>
 
-    <!-- ======================================================================
-         Platform Features Section
-         ====================================================================== -->
     <section id="features" class="landing-section features-section">
         <div class="container">
             <div class="row text-center justify-content-center mb-5">
                 <div class="col-lg-8">
                     <div class="section-eyebrow">Built for Depth</div>
                     <h2 class="section-heading">Why Writers & Readers Choose Django Blog</h2>
-                    <p class="section-desc mx-auto">We created a publishing sanctuary where content is king, reader attention is respected, and community feedback is meaningful.</p>
+                    <p class="section-desc mx-auto">We created a publishing sanctuary where content is king, reader
+                        attention is respected, and community feedback is meaningful.</p>
                 </div>
             </div>
 
             <div class="row g-4">
-                <!-- Feature 1 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-box">
                         <div class="feature-icon-wrapper">
                             <i class="bi bi-feather"></i>
                         </div>
                         <h3 class="feature-title">Pure Typography</h3>
-                        <p class="feature-text">Curated font scales, optimal line lengths, and soothing contrast ratios engineered for strain-free reading sessions.</p>
+                        <p class="feature-text">Curated font scales, optimal line lengths, and soothing contrast ratios
+                            engineered for strain-free reading sessions.</p>
                     </div>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-box">
                         <div class="feature-icon-wrapper">
                             <i class="bi bi-code-slash"></i>
                         </div>
                         <h3 class="feature-title">Code Highlighting</h3>
-                        <p class="feature-text">First-class syntax formatting for Python, JavaScript, SQL, and shell commands directly within essays.</p>
+                        <p class="feature-text">First-class syntax formatting for Python, JavaScript, SQL, and shell
+                            commands directly within essays.</p>
                     </div>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-box">
                         <div class="feature-icon-wrapper">
                             <i class="bi bi-speedometer2"></i>
                         </div>
                         <h3 class="feature-title">Instant Loading</h3>
-                        <p class="feature-text">No bloated trackers or heavy client scripts. Clean semantic HTML ensuring sub-second rendering on any device.</p>
+                        <p class="feature-text">No bloated trackers or heavy client scripts. Clean semantic HTML
+                            ensuring sub-second rendering on any device.</p>
                     </div>
                 </div>
 
-                <!-- Feature 4 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-box">
                         <div class="feature-icon-wrapper">
                             <i class="bi bi-chat-heart"></i>
                         </div>
                         <h3 class="feature-title">Real Community</h3>
-                        <p class="feature-text">Engage in constructive dialogues with fellow authors and readers who care about crafting great software.</p>
+                        <p class="feature-text">Engage in constructive dialogues with fellow authors and readers who
+                            care about crafting great software.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ======================================================================
-         Interactive Reading Experience Mockup Section
-         ====================================================================== -->
     <section class="landing-section">
         <div class="container">
             <div class="row align-items-center g-5">
@@ -508,7 +497,8 @@
                     <div class="section-eyebrow">The Experience</div>
                     <h2 class="section-heading">An Editorial Canvas That Lets Thoughts Breathe</h2>
                     <p class="section-desc">
-                        Every article on Django Blog is formatted like a page from an exquisite publication. Authors can express complex technical ideas clearly, and readers can consume them without noise.
+                        Every article on Django Blog is formatted like a page from an exquisite publication. Authors can
+                        express complex technical ideas clearly, and readers can consume them without noise.
                     </p>
 
                     <ul class="list-unstyled mt-4 mb-4">
@@ -516,21 +506,24 @@
                             <i class="bi bi-check2-circle text-primary fs-5 mt-1"></i>
                             <div>
                                 <strong class="d-block text-dark">Estimated Read Time & Progress</strong>
-                                <span class="text-muted small">Real-time indicators so readers always know their journey through long-form essays.</span>
+                                <span class="text-muted small">Real-time indicators so readers always know their journey
+                                    through long-form essays.</span>
                             </div>
                         </li>
                         <li class="d-flex align-items-start gap-3 mb-3">
                             <i class="bi bi-check2-circle text-primary fs-5 mt-1"></i>
                             <div>
                                 <strong class="d-block text-dark">Syntax-Highlighted Snippets</strong>
-                                <span class="text-muted small">Technical explanations backed by legible, beautifully styled code blocks.</span>
+                                <span class="text-muted small">Technical explanations backed by legible, beautifully
+                                    styled code blocks.</span>
                             </div>
                         </li>
                         <li class="d-flex align-items-start gap-3">
                             <i class="bi bi-check2-circle text-primary fs-5 mt-1"></i>
                             <div>
                                 <strong class="d-block text-dark">Seamless Mobile Readability</strong>
-                                <span class="text-muted small">Fluid typography adapts gracefully from 4K cinema displays down to mobile screens.</span>
+                                <span class="text-muted small">Fluid typography adapts gracefully from 4K cinema
+                                    displays down to mobile screens.</span>
                             </div>
                         </li>
                     </ul>
@@ -565,23 +558,28 @@
                             <h3>Understanding Python Context Managers</h3>
 
                             <p class="text-muted">
-                                Resource management in Python is cleanest when abstracted into context managers. Whether managing database sessions or file locks, the <code class="text-dark bg-light px-1 py-0 rounded">with</code> statement ensures deterministic teardown.
+                                Resource management in Python is cleanest when abstracted into context managers. Whether
+                                managing database sessions or file locks, the <code
+                                    class="text-dark bg-light px-1 py-0 rounded">with</code> statement ensures
+                                deterministic teardown.
                             </p>
 
                             <div class="sample-code-block">
-<span class="code-comment"># An idiomatic database transaction context</span>
-<span class="code-keyword">from</span> contextlib <span class="code-keyword">import</span> contextmanager
+                                <span class="code-comment"># An idiomatic database transaction context</span>
+                                <span class="code-keyword">from</span> contextlib <span
+                                    class="code-keyword">import</span> contextmanager
 
-<span class="code-keyword">@contextmanager</span>
-<span class="code-keyword">def</span> <span class="code-func">atomic_transaction</span>():
-    conn = get_db_connection()
-    conn.begin()
-    <span class="code-keyword">try</span>:
-        <span class="code-keyword">yield</span> conn
-        conn.commit()
-    <span class="code-keyword">except</span> Exception:
-        conn.rollback()
-        <span class="code-keyword">raise</span>
+                                <span class="code-keyword">@contextmanager</span>
+                                <span class="code-keyword">def</span> <span
+                                    class="code-func">atomic_transaction</span>():
+                                conn = get_db_connection()
+                                conn.begin()
+                                <span class="code-keyword">try</span>:
+                                <span class="code-keyword">yield</span> conn
+                                conn.commit()
+                                <span class="code-keyword">except</span> Exception:
+                                conn.rollback()
+                                <span class="code-keyword">raise</span>
                             </div>
 
                             <p class="text-muted mb-0">
@@ -594,27 +592,25 @@
         </div>
     </section>
 
-    <!-- ======================================================================
-         Reader & Author Voices (Testimonials)
-         ====================================================================== -->
     <section class="landing-section pt-0">
         <div class="container">
             <div class="row text-center justify-content-center mb-5">
                 <div class="col-lg-8">
                     <div class="section-eyebrow">Voices from the Community</div>
                     <h2 class="section-heading">Loved by Thought Leaders & Engineers</h2>
-                    <p class="section-desc mx-auto">Hear what authors and software developers say about their publishing experience.</p>
+                    <p class="section-desc mx-auto">Hear what authors and software developers say about their publishing
+                        experience.</p>
                 </div>
             </div>
 
             <div class="row g-4">
-                <!-- Testimonial 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon"><i class="bi bi-quote"></i></div>
                             <p class="testimonial-text">
-                                "The editorial typography on Django Blog makes reading complex technical essays an absolute delight. It’s what modern web writing should feel like."
+                                "The editorial typography on Django Blog makes reading complex technical essays an
+                                absolute delight. It’s what modern web writing should feel like."
                             </p>
                         </div>
                         <div class="testimonial-author">
@@ -627,17 +623,18 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon"><i class="bi bi-quote"></i></div>
                             <p class="testimonial-text">
-                                "Publishing my Django tutorials here resulted in the highest engagement and highest quality discussions I've experienced anywhere online."
+                                "Publishing my Django tutorials here resulted in the highest engagement and highest
+                                quality discussions I've experienced anywhere online."
                             </p>
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-avatar-fallback" style="background-color: #f7e6d7; color: #b4672c;">SR</div>
+                            <div class="author-avatar-fallback" style="background-color: #f7e6d7; color: #b4672c;">SR
+                            </div>
                             <div>
                                 <div class="testimonial-author-name">Sarah Reynolds</div>
                                 <div class="testimonial-author-role">Technical Author & Consultant</div>
@@ -646,17 +643,18 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon"><i class="bi bi-quote"></i></div>
                             <p class="testimonial-text">
-                                "Zero intrusive ads, clean layout, and rich content. Django Blog is bookmarked on my browser as my go-to morning coffee read."
+                                "Zero intrusive ads, clean layout, and rich content. Django Blog is bookmarked on my
+                                browser as my go-to morning coffee read."
                             </p>
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-avatar-fallback" style="background-color: #dbeae8; color: #22514f;">DL</div>
+                            <div class="author-avatar-fallback" style="background-color: #dbeae8; color: #22514f;">DL
+                            </div>
                             <div>
                                 <div class="testimonial-author-name">David Lin</div>
                                 <div class="testimonial-author-role">Full Stack Developer</div>
@@ -668,9 +666,6 @@
         </div>
     </section>
 
-    <!-- ======================================================================
-         Call to Action / Newsletter Section
-         ====================================================================== -->
     <section class="landing-cta-section">
         <div class="container">
             <div class="cta-banner-card">
@@ -679,10 +674,12 @@
                         <div class="section-eyebrow" style="color: var(--accent);">Stay Ahead</div>
                         <h2 class="cta-title">Deep engineering insights, straight to your inbox.</h2>
                         <p class="cta-desc">
-                            Join over 15,000 developers receiving our weekly curated digest of software architecture, Django tips, and engineering reflections.
+                            Join over 15,000 developers receiving our weekly curated digest of software architecture,
+                            Django tips, and engineering reflections.
                         </p>
 
-                        <form class="cta-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Django Blog newsletter!');">
+                        <form class="cta-form"
+                            onsubmit="event.preventDefault(); alert('Thank you for subscribing to Django Blog newsletter!');">
                             <input type="email" class="cta-input" placeholder="Enter your email address..." required>
                             <button type="submit" class="cta-btn">
                                 Subscribe Free <i class="bi bi-send ms-1"></i>
@@ -697,7 +694,8 @@
 
                     <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
                         <div class="d-inline-flex flex-column align-items-lg-end gap-3">
-                            <div class="p-3 rounded bg-white shadow-sm d-inline-flex align-items-center gap-3 text-start">
+                            <div
+                                class="p-3 rounded bg-white shadow-sm d-inline-flex align-items-center gap-3 text-start">
                                 <i class="bi bi-pen-fill text-primary fs-3"></i>
                                 <div>
                                     <div class="fw-bold text-dark">Have a story to tell?</div>
@@ -714,29 +712,28 @@
         </div>
     </section>
 
-    <!-- ======================================================================
-         Footer
-         ====================================================================== -->
     <footer class="landing-footer">
         <div class="container">
             <div class="row g-4">
-                <!-- Col 1: Brand & Tagline -->
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-brand">
                         <h4><i class="bi bi-journal-text"></i> Django Blog</h4>
                         <p class="footer-bio">
-                            A curated platform where developers, architects, and thinkers share timeless ideas and software craft.
+                            A curated platform where developers, architects, and thinkers share timeless ideas and
+                            software craft.
                         </p>
                         <div class="footer-socials">
-                            <a href="https://github.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com" target="_blank" rel="noopener" class="social-icon-link"
+                                aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-link"
+                                aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-link"
+                                aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                             <a href="/" class="social-icon-link" aria-label="RSS Feed"><i class="bi bi-rss"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Col 2: Navigation Links -->
                 <div class="col-lg-2 col-md-6 col-6">
                     <h5 class="footer-col-title">Explore</h5>
                     <ul class="footer-nav-list">
@@ -747,7 +744,6 @@
                     </ul>
                 </div>
 
-                <!-- Col 3: Topics -->
                 <div class="col-lg-3 col-md-6 col-6">
                     <h5 class="footer-col-title">Topics</h5>
                     <ul class="footer-nav-list">
@@ -758,7 +754,6 @@
                     </ul>
                 </div>
 
-                <!-- Col 4: Platform -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-col-title">Platform</h5>
                     <ul class="footer-nav-list">
@@ -770,7 +765,6 @@
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
             <div class="footer-bottom-bar">
                 <small>&copy; 2026 Django Blog. All rights reserved. Built with Python & Django.</small>
                 <div class="status-indicator">
@@ -781,8 +775,8 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

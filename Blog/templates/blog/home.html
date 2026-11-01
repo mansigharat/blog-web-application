@@ -1,37 +1,26 @@
 {% extends "blog/base.html" %}
 {% block content %}
 <div class="row">
-    <!-- Blog Posts Section -->
     <div class="col-md-8">
         <h2 class="section-title mb-4">
             Latest Blog Posts
         </h2>
-
         {% for post in posts %}
-
             <div class="card blog-card mb-4">
                 <div class="card-body">
-                    <!-- Post Title -->
                     <h3 class="card-title">
                         {{ post.title }}
                     </h3>
-
-                    <!-- Author and Date -->
                     <p class="post-meta">
                         <i class="bi bi-person-circle"></i>
                         By {{ post.author }}
                         <span class="mx-2">|</span>
                         <i class="bi bi-calendar"></i>
                         {{ post.date_posted|date:"F d, Y" }}
-
                     </p>
-
-                    <!-- Post Content -->
                     <p class="card-text">
                         {{ post.content }}
                     </p>
-
-                    <!-- Read More Button -->
                     <a href="#" class="btn btn-outline-primary btn-sm">
                         Read More
                     </a>
@@ -44,14 +33,11 @@
         {% endfor %}
     </div>
 
-
-    <!-- Sidebar Section -->
     <div class="col-md-4">
         <div class="card sidebar-card">
             <div class="card-header">
                 <h5 class="mb-0">Our Sidebar</h5>
             </div>
-
             <div class="card-body">
                 <p>Welcome to Django Blog!</p>
                 <p>
