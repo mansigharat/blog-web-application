@@ -1,18 +1,26 @@
+
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
-post_var = Post.objects.all()
+
+
 def home(request):
-    return render(request, 'Blog/home.html', {'posts': post_var})
+    posts = Post.objects.all()
+    return render(request, 'Blog/home.html', {'posts': posts})
+
 
 def about(request):
     return render(request, 'Blog/about.html', {'title': 'About'})
 
+
 def landing(request):
-    return render(request, 'Blog/landing_page.html', {'posts': post_var, 'title': 'Welcome'})
+    posts = Post.objects.all()
+    return render(request, 'Blog/landing_page.html', {
+        'posts': posts,
+        'title': 'Welcome'
+    })
+
 
 def post_detail(request, post_id):
-    for post in post_var:
-        if post['id'] == post_id:
-            return render(request, 'Blog/post_detail.html', {'post': post})
-    raise Http404("Post not found")
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, 'Blog/post_detail.html', {'post': post})
