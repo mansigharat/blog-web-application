@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Blog | Where Ideas & Thoughtful Writing Flourish</title>
+    <title>DevSphere</title>
+    <link rel="icon" type="image/svg+xml"
+      href="{% static 'blog/images/favicon.svg' %}">
     <meta name="description"
         content="A modern, distraction-free publishing platform for developers, thinkers, and builders. Read insightful articles on technology, programming, and architecture.">
 
@@ -57,8 +59,8 @@
 
                 <!-- login form -->
                 <div class="d-flex align-items-center gap-2">
-                    <a href="users\templates\users\register.html" class="btn btn-nav-outline">Log in</a>
-                    <a href="register" class="btn btn-nav-outline">Sign Up</a>
+                    <a href="{% url 'login' %}" class="btn btn-nav-outline">Log in</a>
+                    <a href="{% url 'register' %}" class="btn btn-nav-outline">Sign Up</a>
                     <a href="/" class="btn btn-nav-primary">Start Writing</a>
                 </div>
             </div>

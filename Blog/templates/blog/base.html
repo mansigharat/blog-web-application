@@ -1,29 +1,36 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% if title %}
-        <title>DevSphere | {{ title }}</title>
+    <title>DevSphere | {{ title }}</title>
     {% else %}
-        <title>DevSphere</title>
+    <title>DevSphere</title>
     {% endif %}
 
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Newsreader:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
 </head>
 
 <body>
 
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
 
@@ -31,9 +38,9 @@
                 <i class="bi bi-journal-text"></i> DevSphere
             </a>
 
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -41,48 +48,66 @@
 
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                 </ul>
 
-                <div class="d-flex gap-2">
-                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">Login</a>
-                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm">Register</a>
+                <div class="d-flex gap-2 navbar-auth">
+                    {% if user.is_authenticated %}
+                    <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-light btn-sm">
+                            Logout
+                        </button>
+                    </form>
+                    <a href="{% url 'profile' %}" class="btn btn-sm"
+                        style="background-color: #2e6b6f; color: white; border-color: #2e6b6f;">
+                        Profile
+                    </a>
+
+                    {% else %}
+
+                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
+                        Login
+                    </a>
+
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm">
+                        Register
+                    </a>
+
+                    {% endif %}
                 </div>
 
             </div>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="container main-content">
 
+        <!-- Django Messages -->
         {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
-                    {{ message }}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
 
-                    <button type="button" class="btn-close"
-                        data-bs-dismiss="alert"></button>
-                </div>
-            {% endfor %}
-        {% endif %}
-        {% if messages %}
-                {% for message in messages%}
-                    <div class="alert alert-{{ message.tags }}">
-                        {{ message }}
-                        
-                    </div>
-                {% endfor %}
-        {% endif %}
-            {% block content %}
+            {{ message }}
 
-            {% endblock content %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <!-- Page Content -->
+        {% block content %}
+        {% endblock content %}
+
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container text-center">
 
@@ -101,7 +126,9 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
