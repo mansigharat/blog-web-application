@@ -1,63 +1,270 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<div class="row">
-    <div class="col-md-8">
-        <h2 class="section-title mb-4">
-            Latest Blog Posts
-        </h2>
-        {% for post in posts %}
-            <div class="card blog-card mb-4">
-                <div class="card-body">
-                    <h3 class="card-title">
-                        {{ post.title }}
-                    </h3>
-                    <p class="post-meta">
-                        <i class="bi bi-person-circle"></i>
-                        By {{ post.author }}
-                        <span class="mx-2">|</span>
-                        <i class="bi bi-calendar"></i>
-                        {{ post.date_posted|date:"F d, Y" }}
-                    </p>
-                    <p class="card-text">
-                        {{ post.content }}
-                    </p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">
-                        Read More
-                    </a>
+<style>
+    .home-wrapper {
+        padding: 15px 0 40px;
+    }
+
+    .section-title {
+        font-family: Georgia, serif;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-bottom: 14px;
+        margin-bottom: 28px;
+        border-bottom: 1px solid var(--border, #ddd8cc);
+    }
+
+    /* Blog Card */
+    .blog-card {
+        background: var(--surface, #eeece3);
+        border: 1px solid var(--border, #ddd8cc);
+        border-radius: 8px;
+        padding: 22px;
+        margin-bottom: 22px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Author */
+    .blog-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+
+    .blog-author img {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .author-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .post-meta {
+        font-size: 12px;
+        color: var(--text-muted, #777);
+    }
+
+    /* Post Content */
+    .blog-card .card-title {
+        font-family: Georgia, serif;
+        font-size: 1.55rem;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 12px;
+        color: var(--text, #202020);
+    }
+
+    .blog-card .card-text {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--text-muted, #666);
+        margin-bottom: 15px;
+    }
+
+    .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text, #222);
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 2px;
+    }
+
+    .read-more:hover {
+        color: var(--primary, #52796f);
+    }
+
+    /* Sidebar */
+    .sidebar-card {
+        background: var(--surface, #eeece3);
+        border: 1px solid var(--border, #ddd8cc);
+        border-radius: 8px;
+        overflow: hidden;
+        position: sticky;
+        top: 25px;
+    }
+
+    .sidebar-card .card-header {
+        background: transparent;
+        border-bottom: 1px solid var(--border, #ddd8cc);
+        padding: 18px;
+    }
+
+    .sidebar-card .card-header h5 {
+        font-family: Georgia, serif;
+        font-weight: 700;
+    }
+
+    .sidebar-card .card-body {
+        padding: 20px;
+    }
+
+    .sidebar-card p {
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--text-muted, #666);
+    }
+
+    .sidebar-card h6 {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .sidebar-card .list-group-item {
+        background: transparent;
+        border-color: var(--border, #ddd8cc);
+        color: var(--text, #222);
+        font-size: 13px;
+        padding: 11px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+        .section-title {
+            font-size: 1.65rem;
+        }
+
+        .blog-card {
+            padding: 17px;
+        }
+
+        .blog-card .card-title {
+            font-size: 1.3rem;
+        }
+
+        .sidebar-card {
+            position: static;
+            margin-top: 15px;
+        }
+    }
+</style>
+
+<div class="home-wrapper">
+
+    <div class="row g-4">
+
+        <!-- LEFT: BLOG POSTS -->
+        <div class="col-lg-8 col-md-8">
+
+            <h2 class="section-title">
+                Latest Blog Posts
+            </h2>
+
+            {% for post in posts %}
+
+            <article class="blog-card">
+
+                <!-- Author Information -->
+                <div class="blog-author">
+
+                    <img src="{{ post.author.profile.image.url }}" alt="{{ post.author.username }}">
+
+                    <div>
+                        <div class="author-name">
+                            {{ post.author.username }}
+                        </div>
+
+                        <div class="post-meta">
+                            <i class="bi bi-calendar3"></i>
+                            {{ post.date_posted|date:"F d, Y" }}
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        {% empty %}
+
+                <!-- Post Details -->
+                <h3 class="card-title">
+                    {{ post.title }}
+                </h3>
+
+                <p class="card-text">
+                    {{ post.content|truncatewords:40 }}
+                </p>
+
+                <a href="#" class="read-more">
+                    Read More
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </article>
+
+            {% empty %}
+
             <div class="alert alert-info">
                 No blog posts available yet.
             </div>
-        {% endfor %}
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- RIGHT: SIDEBAR -->
+        <div class="col-lg-4 col-md-4">
+
+            <aside class="card sidebar-card">
+
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        Our Sidebar
+                    </h5>
+                </div>
+
+                <div class="card-body">
+
+                    <p>
+                        Welcome to Django Blog!
+                    </p>
+
+                    <p>
+                        Stay updated with our latest articles and posts.
+                    </p>
+
+                    <hr>
+
+                    <h6>Categories</h6>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            Technology
+                        </li>
+
+                        <li class="list-group-item">
+                            Programming
+                        </li>
+
+                        <li class="list-group-item">
+                            Development
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        </div>
+
     </div>
 
-    <div class="col-md-4">
-        <div class="card sidebar-card">
-            <div class="card-header">
-                <h5 class="mb-0">Our Sidebar</h5>
-            </div>
-            <div class="card-body">
-                <p>Welcome to Django Blog!</p>
-                <p>
-                    Stay updated with our latest articles and posts.
-                </p>
-                <hr>
-                <h6>Categories</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        Technology
-                    </li>
-                    <li class="list-group-item">
-                        Programming
-                    </li>
-                    <li class="list-group-item">
-                        Development
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
+
 {% endblock content %}
