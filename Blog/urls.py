@@ -4,9 +4,10 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 from users import views as user_views
+from .views import PostListView
 
 urlpatterns = [
-    path('home/', views.home, name='home'),
+    path('home/', PostListView.as_view(), name='home'),
     path('', views.landing, name='landing'),
     path('about/', views.about, name='about'),
 

@@ -1,7 +1,7 @@
-
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from .models import Post
+from django.views.generic import ListView
 
 
 def home(request):
@@ -24,3 +24,9 @@ def landing(request):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     return render(request, 'Blog/post_detail.html', {'post': post})
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
